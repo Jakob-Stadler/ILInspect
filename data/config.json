@@ -1,0 +1,255 @@
+{
+  "$schema": "./schema.json",
+  "sensor_connections": [
+    {
+      "host": "localhost",
+      "port": 9999,
+      "stay_connected": false,
+      "stop_lasers": true,
+      "laser_startup_wait_time": 1000,
+      "sensors": [
+        {
+          "id": "1/01",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/02",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/03",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/04",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/05",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/06",
+          "conversion_factor": 0.001
+        }
+      ]
+    },
+    {
+      "host": "localhost",
+      "port": 9998,
+      "stop_lasers": true,
+      "laser_startup_wait_time": 1000,
+      "sensors": [
+        {
+          "id": "2/01",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "2/02",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "2/03",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "2/04",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "2/05",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "2/06",
+          "conversion_factor": 0.001
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "APS",
+      "image_location": "./APS.png",
+      "sensors": [
+        {
+          "id": "1/01",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.5,
+          "pos_y": 0.9
+        },
+        {
+          "id": "1/02",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.5,
+          "pos_y": 0.63
+        },
+        {
+          "id": "1/03",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.5,
+          "pos_y": 0.44
+        },
+        {
+          "id": "1/04",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.6,
+          "pos_y": 0.42
+        },
+        {
+          "id": "1/05",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.66,
+          "pos_y": 0.67
+        },
+        {
+          "id": "1/06",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.32,
+          "pos_y": 0.66
+        },
+        {
+          "id": "2/01",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.2,
+          "pos_y": 0.55
+        },
+        {
+          "id": "2/02",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.33,
+          "pos_y": 0.32
+        },
+        {
+          "id": "2/03",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.8,
+          "pos_y": 0.55
+        },
+        {
+          "id": "2/04",
+          "bank": 0,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.67,
+          "pos_y": 0.32
+        }
+      ]
+    },
+    {
+      "name": "BAK",
+      "image_location": "./BAK.png",
+      "sensors": [
+        {
+          "id": "1/02",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.5,
+          "pos_y": 0.63
+        },
+        {
+          "id": "1/03",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.5,
+          "pos_y": 0.44
+        },
+        {
+          "id": "1/04",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.6,
+          "pos_y": 0.42
+        },
+        {
+          "id": "1/05",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.66,
+          "pos_y": 0.67
+        },
+        {
+          "id": "1/06",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.32,
+          "pos_y": 0.66
+        },
+        {
+          "id": "2/01",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.2,
+          "pos_y": 0.55
+        },
+        {
+          "id": "2/02",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.33,
+          "pos_y": 0.32
+        },
+        {
+          "id": "2/03",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.8,
+          "pos_y": 0.55
+        },
+        {
+          "id": "2/04",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.67,
+          "pos_y": 0.32
+        },
+        {
+          "id": "2/05",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.25,
+          "pos_y": 0.25
+        },
+        {
+          "id": "2/06",
+          "bank": 1,
+          "high": 2.0,
+          "low": -2.0,
+          "pos_x": 0.74,
+          "pos_y": 0.25
+        }
+      ]
+    }
+  ],
+  "database": {
+    "source": "./database.db"
+  }
+}

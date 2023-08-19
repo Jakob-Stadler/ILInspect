@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "ILInspect settings",
+  "type": "object",
+  "required": [
+    "views",
+    "sensor_connections",
+    "database"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "description": "Path to schema that's currently in use",
+      "type": "string"
+    },
+    "sensor_connections": {
+      "description": "List of connection settings that define how communication to the sensors works",
+      "type": "array",
+      "items": {
+        "description": "Connection Settings: define how communication to the sensors",
+        "type": "object",
+        "required": [
+          "host",
+          "port",
+          "sensors"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "host": {
+            "description": "Hostname/IP of the communication unit",
+            "type": "string"
+          },
+          "port": {
+            "description": "Port number of the communication unit",
+            "type": "integer"
+          },
+          "stay_connected": {
+            "description": "Should the connection be kept alive as long as possible or re-established for every command?",
+            "type": "boolean",
+            "default": false
+          },
+          "stop_lasers": {
+            "description": "Should lasers be automatically stopped when not in use?",
+            "type": "boolean",
+            "default": false
+          },
+          "laser_startup_wait_time": {
+            "description": "Wait/Warmup time before measurements when lasers are re-enabled, in milliseconds",
+            "type": "integer",
+            "default": 1000
+          },
+          "sensors": {
+            "description": "List of sensors connected to the communication unit, required for views, first entry is ID 01, second ID 02, etc.",
+            "type": "array",
+            "items": {
+              "description": "Defines sensors connected to communication unit",
+              "type": "object",
+              "required": [
+                "id",
+                "conversion_factor"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "description": "Identifier of the sensor to be used in views",
+                  "type": "string"
+                },
+                "conversion_factor": {
+                  "description": "Defines decimal places of the sensor measurement value, e.g. 0.001, 0.01, etc.",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "views": {
+      "description": "List of view settings that define how the sensors are used",
+      "type": "array",
+      "items": {
+        "description": "View settings: Define a view and how sensors are laid out",
+        "type": "object",
+        "required": [
+          "name",
+          "image_location",
+          "sensors"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "description": "View name: uniquely identifies the View",
+            "type": "string"
+          },
+          "image_location": {
+            "description": "Path to the image file displayed in the background of the view, relative paths are resolved relative to this configuration file",
+            "type": "string"
+          },
+          "sensors": {
+            "description": "List of sensors and how they are used",
+            "type": "array",
+            "items": {
+              "description": "Sensor Usage Settings",
+              "type": "object",
+              "required": [
+                "id",
+                "pos_x",
+                "pos_y"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "description": "Identifier of the sensor, has to be one defined in the sensor_connections section",
+                  "type": "string"
+                },
+                "pos_x": {
+                  "description": "Horizontal position of the sensor on the background image, from 0.0 (all the way left) to 1.0 (all the way right)",
+                  "type": "number"
+                },
+                "pos_y": {
+                  "description": "Vertical position of the sensor on the background image, from 0.0 (all the way up) to 1.0 (all the way down)",
+                  "type": "number"
+                },
+                "bank": {
+                  "description": "Go to this bank number during initialization, leave out to skip initialization",
+                  "type": "integer",
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ]
+                },
+                "shift": {
+                  "description": "Zero Shift Target Value, change the 0 position during initialization, requires bank to be set",
+                  "type": "number"
+                },
+                "high": {
+                  "description": "HIGH Threshold Value, change the threshold for HIGH signals during initialization, requires bank to be set",
+                  "type": "number"
+                },
+                "low": {
+                  "description": "LOW Threshold Value, change the threshold for LOW signals during initialization, requires bank to be set",
+                  "type": "number"
+                },
+                "analog_upper": {
+                  "description": "Analog Upper Limit Value, change the position of the maximum analog output during initialization, requires bank to be set",
+                  "type": "number"
+                },
+                "analog_lower": {
+                  "description": "Analog Lower Limit Value, change the position of the minimum analog output during initialization, requires bank to be set",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "database": {
+      "description": "Database Settings: How measurement values should be stored.",
+      "type": "object",
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "description": "Location of the SQLite database file, use ':memory:' to disable storing measurements to disk",
+          "type": "string",
+          "default": ":memory:"
+        }
+      }
+    }
+  }
+}

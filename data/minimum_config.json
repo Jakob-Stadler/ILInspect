@@ -1,0 +1,46 @@
+{
+  "views": [
+    {
+      "name": "",
+      "image_location": "Pixel.png",
+      "sensors": []
+    }
+  ],
+  "sensor_connections": [
+    {
+      "host": "localhost",
+      "port": 9999,
+      "stop_lasers": true,
+      "laser_startup_wait_time": 1000,
+      "sensors": [
+        {
+          "id": "1/01",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/02",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/03",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/04",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/05",
+          "conversion_factor": 0.001
+        },
+        {
+          "id": "1/06",
+          "conversion_factor": 0.001
+        }
+      ]
+    }
+  ],
+  "database": {
+    "source": ":memory:"
+  }
+}

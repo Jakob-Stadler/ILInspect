@@ -1,0 +1,38 @@
+{
+  "$schema": "./schema.json",
+  "sensor_connections": [
+    {
+      "host": "localhost",
+      "port": 9999,
+      "stay_connected": false,
+      "stop_lasers": true,
+      "laser_startup_wait_time": 1000,
+      "sensors": [
+        {
+          "id": "1/01",
+          "conversion_factor": 0.001
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "Single",
+      "image_location": "./Pixel.png",
+      "sensors": [
+        {
+          "id": "1/01",
+          "pos_x": 0.5,
+          "pos_y": 0.5,
+          "bank": 0,
+          "shift": 0,
+          "high": 2,
+          "low": -2
+        }
+      ]
+    }
+  ],
+  "database": {
+    "source": ":memory:"
+  }
+}
