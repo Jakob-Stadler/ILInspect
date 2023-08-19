@@ -1,10 +1,10 @@
-# ILInspect
+# ILInspect 
 
 ILInspect is a simple measurement application program for Keyence [IL-Sensors](https://www.keyence.com/products/measure/laser-1d/il/) communicating through a [DL-EN1 communication unit](https://www.keyence.com/products/sensor/network-communication/dl/) written in .NET7.0 C# with Windows Forms, using a TCP/IP ethernet connection to communicate with the sensors.
 
 It aims to provide a simple graphical user interface that allows the user to take measurements and document results in database, all with the single press of a button.
 
-If you are looking to demo the application but don't have access to Keyence IL sensors and a DL-EN1 communication unit, please check out [ILSim](../../../../ILSim), a pure software simulation of the sensor communication for testing purposes.
+If you are looking to demo the application but don't have access to Keyence IL sensors and a DL-EN1 communication unit, please check out [ILSim](https://github.com/Jakob-Stadler/ILSim), a pure software simulation of the sensor communication for testing purposes.
 
 ILInspect is designed with a two-pronged approach: Make the primary action as easy as possbile, while still providing powerful tools for system configuration. This approach allows a single proficient user to set up measurement regime, which can be performed by other less proficient users without extensive training and instructions.
 
